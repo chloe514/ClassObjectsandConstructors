@@ -12,6 +12,7 @@ public class BankAccount {
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
+            System.out.println("Deposited $" + amount);
         } else {
             System.out.println("Invalid deposit amount");
         }
@@ -21,6 +22,7 @@ public class BankAccount {
     public void withdraw(double amount) {
         if (amount > 0 && amount <= balance) {
             balance -= amount;
+            System.out.println("Withdrew $" + amount);
         } else {
             System.out.println("Invalid withdrawal amount or insufficient funds.");
         }
@@ -28,13 +30,13 @@ public class BankAccount {
 
     // Method to print account details
     public void printAccountDetails() {
-        System.out.println(accountHolderName + "'s account balance: " + balance);
+        System.out.println(accountHolderName + "'s account balance: $" + balance);
     }
 
     // Override toString method to print account details
     @Override
     public String toString() {
-        return "Account Holder: " + accountHolderName + "\nBalance: " + balance;
+        return "Account Holder: " + accountHolderName + "\nBalance: $" + balance;
     }
 
     // Main method to test the BankAccount class
@@ -50,9 +52,10 @@ public class BankAccount {
         account2.deposit(100);
 
         // Print the account details to the console
-        account1.printAccountDetails();
-        account2.printAccountDetails();
+        System.out.println(account1);
+        System.out.println(account2);
     }
 }
+
 
 
